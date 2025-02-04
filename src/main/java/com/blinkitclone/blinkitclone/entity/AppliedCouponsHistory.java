@@ -1,10 +1,8 @@
 package com.blinkitclone.blinkitclone.entity;
 
+import com.blinkitclone.blinkitclone.Enums.DeletionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class AppliedCouponsHistory {
 
     @Id
@@ -26,4 +25,5 @@ public class AppliedCouponsHistory {
     Integer discountAmount;
     LocalDateTime appliedAt;
     Integer orderTotalAfterDiscount;
+    DeletionStatus deletionStatus;
 }
