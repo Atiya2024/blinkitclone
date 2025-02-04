@@ -1,11 +1,18 @@
 package com.blinkitclone.blinkitclone.entity;
 
+import com.blinkitclone.blinkitclone.Enums.DeletionStatus;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "flash_sale")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class FlashSaleTable {
 
     @Id
@@ -17,4 +24,5 @@ public class FlashSaleTable {
     LocalDate startDate;
     LocalDate endDate;
     Integer categoryId;
+    DeletionStatus deletionStatus;
 }

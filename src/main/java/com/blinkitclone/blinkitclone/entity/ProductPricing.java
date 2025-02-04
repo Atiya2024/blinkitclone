@@ -1,10 +1,8 @@
 package com.blinkitclone.blinkitclone.entity;
 
+import com.blinkitclone.blinkitclone.Enums.DeletionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -14,29 +12,24 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ProductPricing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer productPriceId;
-
     Integer productId;
-
-    Integer basePrice;
-
-    Integer taxId;
-
-    Integer categoryId;
-
-    Integer taxAmount;
-
-    Integer finalPrice;
-
+    Integer minPrice;
+    Integer maxPrice;
+    Integer merchantPrice;
+    Integer finalPriceBeforeDiscount;
     Integer slashPrice;
-
+    Integer taxId;
+    Integer taxAmount;
+    Integer finalPrice;
+    Integer categoryId;
     Integer priceRuleId;
-
     LocalDate createdDate;
-
     LocalDate updatedDate;
+    DeletionStatus deletionStatus;
 
 }

@@ -1,10 +1,8 @@
 package com.blinkitclone.blinkitclone.entity;
 
+import com.blinkitclone.blinkitclone.Enums.DeletionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "price_change_history")
+@Builder
 public class PriceChangeHistory {
 
     @Id
@@ -24,4 +23,5 @@ public class PriceChangeHistory {
     Integer newPrice;
     LocalDateTime changedAt;
     String reasonForChange;
+    DeletionStatus deletionStatus;
 }

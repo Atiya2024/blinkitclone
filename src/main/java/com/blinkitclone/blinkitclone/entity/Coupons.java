@@ -1,13 +1,20 @@
 package com.blinkitclone.blinkitclone.entity;
 
 import com.blinkitclone.blinkitclone.Enums.CouponStatus;
+import com.blinkitclone.blinkitclone.Enums.DeletionStatus;
 import com.blinkitclone.blinkitclone.Enums.applicableCategory;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "coupons")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Coupons {
 
     @Id
@@ -39,4 +46,5 @@ public class Coupons {
     CouponStatus  status;
     Integer redeemedCount;
     String createdBy;
+    DeletionStatus deletionStatus;
 }
